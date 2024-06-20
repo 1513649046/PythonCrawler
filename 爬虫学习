@@ -1,0 +1,20 @@
+爬虫流程：
+一、数据来源分析
+    1、明确需求
+    2、抓包分析：通过开发者工具
+        - 打开开发者工具，刷新网页
+        - ps：音频直接找媒体文件
+        - 通过关键字搜索找到音频链接信息数据包
+二、抓包实现步骤
+    1、发送请求
+    2、获取数据
+    3、解析数据
+    4、保存数据
+url = 'https://music.163.com/discover/toplist?id=2149107400'
+# headers请求头，将python代码伪装成浏览器访问服务器
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 '
+                  'Safari/537.36'
+}
+data = {}
+response = requests.get(url=url, params=data, headers=headers)
